@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Cakery - Cart</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff9f3;
+            color: #4a3b3b;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .cart-container {
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        .cart-item {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+        }
+
+        .cart-item h3 {
+            margin: 0 0 8px;
+        }
+
+        .total {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: right;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f4b6c2;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🛒 Your Cart</h1>
+
+    <div class="cart-container">
+
+        <div id="cart-items">
+</div>
+
+       <div class="total">
+    Total: ₹<span id="cart-total">0</span>
+</div>
+
+        <button class="checkout-btn">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let cartItems = document.getElementById("cart-items");
+
+let total = 0;
+
+cart.forEach(function(item, index) {
+
+    cartItems.innerHTML += `
+        <div class="cart-item">
+            <h3>${item.name}</h3>
+            <p>₹${item.price}</p>
+            <button onclick="removeFromCart(${index})">
+                Remove
+            </button>
+        </div>
+    `;
+
+    total = total + item.price;
+
+});
+
+document.getElementById("cart-total").innerText = total;
+
+
+function removeFromCart(index) {
+
+    cart.splice(index, 1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    location.reload();
+
+}
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Cakery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff9f3;
+            color: #4a3b3b;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: #fff9f3;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #c9788c;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #4a3b3b;
+            font-size: 16px;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 80px;
+        }
+
+        .hero-image {
+    width: 45%;
+    height: 380px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+        .hero-text h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+            color: #a85d72;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            margin-right: 10px;
+            border-radius: 25px;
+            text-decoration: none;
+            background-color: #f3b8c5;
+            color: white;
+        }
+
+        .button.secondary {
+            background-color: #ddd4f2;
+            color: #4a3b3b;
+        }
+
+        .hero-image {
+    width: 45%;
+    height: 380px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        
+        .cakes {
+    padding: 70px 80px;
+    text-align: center;
+    background-color: #fff4f5;
+}
+
+.cakes h2 {
+    font-size: 38px;
+    color: #a85d72;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+.cake-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.cake-card {
+    width: 220px;
+    padding: 20px;
+    background-color: #fff9f3;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cake-photo {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.cake-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+.cake-card h3 {
+    color: #a85d72;
+    margin-bottom: 8px;
+}
+
+.cake-card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cake-card strong {
+    font-size: 18px;
+}
+
+.cake-card button {
+    margin-top: 12px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f3b8c5;
+    color: white;
+    cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            The Cakery
+        </div>
+
+        <nav>
+    <a href="#">Home</a>
+    <a href="#">Cakes</a>
+    <a href="#">Create Your Cake</a>
+    <a href="#">My Orders</a>
+    <a href="#">Login</a>
+    <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+</nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>Your Cake,<br>Your Moment.</h1>
+
+            <p>
+                Freshly baked. Easy to order.
+                Made for every little celebration.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#" class="button">
+                    Shop Cakes
+                </a>
+
+                <a href="#" class="button secondary">
+                    Create Your Cake
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+   <img src="Image/hero-cake.jpg" alt="The Cakery cake">
+</div>
+
+</section>
+
+<section class="cakes">
+
+    <h2>A Little Something Sweet</h2>
+
+    <p class="section-subtitle">
+        Our favourites, freshly baked for every little moment.
+    </p>
+
+    <div class="cake-container">
+
+        <div class="cake-card">
+            <div class="cake-photo">
+               <img src="chocolate_truffle.jpeg" alt="Chocolate Truffle Cake">
+            </div>
+            <h3>Chocolate Truffle</h3>
+            <p>Rich, chocolatey and oh-so-good.</p>
+            <strong>₹699</strong>
+            <br>
+            <button onclick="addToCart('Chocolate Truffle', 699)">
+    Quick Add
+</button>
+        </div>
+
+        <div class="cake-card">
+            <div class="cake-photo">
+               <img src="BUTTERSCOTCH_CAKE.jpeg" alt="Butterscotch Cake">
+            </div>
+            <h3>Butterscotch Crunch</h3>
+            <p>Sweet, creamy with a little crunch.</p>
+            <strong>₹749</strong>
+            <br>
+            <button onclick="addToCart('Butterscotch Crunch', 749)">
+    Quick Add
+</button>
+        </div>
+
+        <div class="cake-card">
+             <div class="cake-photo">
+               <img src="red_velvet.jpeg" alt="Red Velvet Cake">
+            </div>
+            <h3>Red Velvet</h3>
+            <p>Soft, creamy and made for celebrations.</p>
+            <strong>₹699</strong>
+            <br>
+           <button onclick="addToCart('Red Velvet', 699)">
+    Quick Add
+</button>
+        </div>
+
+        <div class="cake-card">
+    <div class="cake-photo">
+        <img src="blueberry_vanilla.jpeg" alt="Blueberry Vanilla Cake">
+    </div>
+    <h3>Blueberry Vanilla</h3>
+    <p>Light, fruity and deliciously fresh.</p>
+    <strong>₹749</strong>
+    <br>
+    <button onclick="addToCart('Blueberry Vanilla', 749)">
+        Quick Add
+    </button>
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+document.getElementById("cart-count").innerText = cart.length;
+
+function addToCart(name, price) {
+
+    cart.push({
+        name: name,
+        price: price
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    document.getElementById("cart-count").innerText = cart.length;
+
+    alert(name + " has been added to your cart!");
+
+}
+
+</script>
+
+</body>
+</html>
