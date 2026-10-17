@@ -1,33 +1,64 @@
-# The Cakery – Website & QA Automation Project
 
-A pastel-themed cake shopping website built as a learning and portfolio project.
+# The Cakery | Manual Testing & UI Automation
 
-## Features
-- Cake product listings and prices
-- Add-to-cart functionality
-- Cart data stored using browser local storage
-- Manual functional and edge-case testing
-- UI automation practice using Playwright
+A pastel-themed cake shopping website used as a personal QA portfolio project to practise functional testing, test case design, defect identification, and browser automation.
 
-## Technologies
-- HTML
-- CSS
-- JavaScript
-- Playwright
+## Project Overview
+
+The Cakery is a sample e-commerce website featuring cake listings, product prices, and shopping cart functionality. It is used to practise real-world website testing scenarios.
+
+## Features Tested
+
+- Cake product listings and displayed prices
+- Quick Add and add-to-cart functionality
+- Shopping cart behaviour and item accuracy
+- Cart persistence using browser local storage
+- Quantity and total-price validation
+- Browser refresh behaviour
+
+## Tech Stack
+
+- HTML, CSS, JavaScript
+- Playwright for UI automation
+- JavaScript-based test scripts
 - Git and GitHub
 
-## Testing Practice
-- Homepage loading and title validation
-- Product and cart functionality
-- Cart state and local storage checks
-- Manual test cases and edge-case testing
-- Automated browser tests using Playwright
+## Manual Testing
 
-## Purpose
-This project helps me build practical skills in software testing, test case design, defect identification, and basic UI automation.
+Manual testing practice includes:
+
+- Functional testing of product and cart workflows
+- Positive and negative test scenarios
+- Edge-case testing
+- Expected versus actual result validation
+- Defect identification and retesting
+
+## Automation Testing
+
+Playwright automation practice includes:
+
+- Homepage loading and page-title validation
+- Add-to-cart verification
+- Cart count validation
+- Product and price assertions
+- Cart persistence after page refresh
+- Cross-browser execution using Chromium, Firefox, and WebKit
+
+Automated tests are being refined as part of ongoing project development. Individual test results may vary while issues are investigated.
+
+## Skills Practised
+
+- Test case design and execution
+- Functional and regression testing concepts
+- Assertions and locator strategies
+- Browser dialog handling
+- Basic UI automation
+- Test result analysis and debugging
 
 ## Project Status
-A learning and portfolio project. Features and automated test coverage are being developed and validated incrementally.
 
-## GitHub Repository
-https://github.com/poojithaparavasthu/the-cakery-playwright
+Personal learning and portfolio project. Features and automated tests are developed, executed, and improved incrementally.
+
+## Repository
+
+[View The Cakery on GitHub](https://github.com/poojithaparavasthu/the-cakery-playwright)
