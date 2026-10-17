@@ -62,3 +62,11 @@ Personal learning and portfolio project. Features and automated tests are develo
 ## Repository
 
 [View The Cakery on GitHub](https://github.com/poojithaparavasthu/the-cakery-playwright)
+
+## Project Screenshots
+
+### Homepage
+![The Cakery Homepage](cakery-homepage.png)
+
+### Playwright Test Results
+![Playwright Test Results](cakery-test-results.png)
