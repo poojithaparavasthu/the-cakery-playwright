@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | The Cakery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>The Cakery</h1>
+        <p>Complete your order</p>
+    </header>
+
+    <main class="checkout-container">
+
+        <h2>Checkout</h2>
+
+        <form id="checkout-form">
+
+            <!-- CUSTOMER DETAILS -->
+            <section>
+                <h3>Customer Details</h3>
+
+                <label for="customer-name">Full Name</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="customer-phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    placeholder="10-digit mobile number"
+                    maxlength="10"
+                    required
+                >
+
+                <label for="customer-email">Email Address (Optional)</label>
+                <input
+                    type="email"
+                    id="customer-email"
+                    placeholder="Enter your email"
+                >
+            </section>
+
+
+            <!-- DELIVERY DETAILS -->
+            <section>
+                <h3>Delivery Details</h3>
+
+                <label for="delivery-address">Delivery Address</label>
+                <textarea
+                    id="delivery-address"
+                    placeholder="Enter your complete address"
+                    required
+                ></textarea>
+
+                <label for="delivery-city">City</label>
+                <input
+                    type="text"
+                    id="delivery-city"
+                    placeholder="Enter your city"
+                    required
+                >
+
+                <label for="delivery-pincode">PIN Code</label>
+                <input
+                    type="text"
+                    id="delivery-pincode"
+                    placeholder="6-digit PIN code"
+                    maxlength="6"
+                    required
+                >
+
+                <label for="delivery-date">Preferred Delivery Date</label>
+                <input
+                    type="date"
+                    id="delivery-date"
+                    required
+                >
+
+                <label for="delivery-instructions">
+                    Delivery Instructions (Optional)
+                </label>
+                <textarea
+                    id="delivery-instructions"
+                    placeholder="Any special delivery instructions?"
+                ></textarea>
+            </section>
+
+
+            <!-- ORDER SUMMARY -->
+            <section>
+                <h3>Order Summary</h3>
+
+                <div id="checkout-items">
+                    <!-- Cart products will be displayed here -->
+                </div>
+
+                <div class="coupon-section">
+                    <label for="coupon-code">Coupon Code</label>
+
+                    <div>
+                        <input
+                            type="text"
+                            id="coupon-code"
+                            placeholder="Enter coupon code"
+                        >
+
+                        <button type="button" id="apply-coupon">
+                            Apply
+                        </button>
+                    </div>
+
+                    <p id="coupon-message"></p>
+                </div>
+
+                <div class="checkout-total">
+                    <p>
+                        Subtotal: ₹<span id="checkout-subtotal">0</span>
+                    </p>
+
+                    <p>
+                        Discount: ₹<span id="checkout-discount">0</span>
+                    </p>
+
+                    <h3>
+                        Total: ₹<span id="checkout-total">0</span>
+                    </h3>
+                </div>
+
+                <p id="checkout-message"></p>
+
+<button type="submit" id="place-order">
+    Place Demo Order
+</button>
+
+            </section>
+
+        </form>
+        <!-- ORDER CONFIRMATION -->
+<section id="order-confirmation" hidden>
+    <h2>Thank You for Your Order! 💗</h2>
+
+    <p>Your demo order has been placed successfully.</p>
+
+    <h3>Order ID: <span id="order-id"></span></h3>
+
+    <div id="confirmed-order-details"></div>
+
+    <p>
+        Final Amount: ₹<span id="confirmed-total"></span>
+    </p>
+
+    <p>This is a demo order. No payment has been processed.</p>
+</section>
+
+    </main>
+
+<script src="checkout.js"></script>
+<body class="checkout-page">
+</html>

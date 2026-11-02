@@ -1,39 +1,71 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Cakery - Cart</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff9f3;
+            background: #fff9f3;
             color: #4a3b3b;
             margin: 0;
             padding: 30px;
         }
 
-        h1 {
-            text-align: center;
-        }
+        h1 { text-align: center; }
 
         .cart-container {
-            max-width: 700px;
+            max-width: 750px;
             margin: 30px auto;
         }
 
         .cart-item {
-            background-color: white;
+            background: white;
             padding: 20px;
             margin-bottom: 15px;
             border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .cart-item h3 {
-            margin: 0 0 8px;
+        .cart-item h3 { margin: 0 0 8px; }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .quantity-controls button,
+        .remove-btn,
+        .edit-btn {
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+
+        .quantity-controls button,
+        .edit-btn {
+            background: #f4b6c2;
+        }
+
+        .remove-btn {
+            background: #f8e1e5;
+            color: #8b3a50;
         }
 
         .total {
-            background-color: white;
+            background: white;
             padding: 20px;
             border-radius: 15px;
             text-align: right;
@@ -47,8 +79,83 @@
             padding: 12px 25px;
             border: none;
             border-radius: 20px;
-            background-color: #f4b6c2;
-            cursor: pointer;
+            background: #f4b6c2;
+        }
+
+        .empty-cart {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .custom-details {
+            background: #fff5f7;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 12px 0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .edit-modal[hidden] {
+            display: none !important;
+        }
+
+        .edit-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(60, 40, 45, 0.55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .edit-modal-content {
+            background: #fff9f3;
+            padding: 25px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 450px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        #edit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #edit-form label {
+            font-weight: bold;
+        }
+
+        #edit-form input,
+        #edit-form select,
+        #edit-form textarea {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #edcbd3;
+            border-radius: 9px;
+            font: inherit;
+        }
+
+        #edit-form button {
+            padding: 12px;
+            border: none;
+            border-radius: 15px;
+            background: #f4b6c2;
+        }
+
+        .close-edit {
+            float: right;
+            border: none;
+            background: none;
+            font-size: 25px;
         }
     </style>
 </head>
@@ -59,58 +166,323 @@
 
     <div class="cart-container">
 
-        <div id="cart-items">
-</div>
+        <div id="cart-items"></div>
 
-       <div class="total">
-    Total: ₹<span id="cart-total">0</span>
-</div>
+        <div class="total">
+            Total: ₹<span id="cart-total">0</span>
+        </div>
 
-        <button class="checkout-btn">
-            Proceed to Checkout
-        </button>
+       <button class="checkout-btn" onclick="window.location.href='checkout.html'">
+    Proceed to Checkout
+</button>
 
+    </div>
+
+    <!-- Edit Birthday Customisation -->
+    <div id="edit-modal" class="edit-modal" hidden>
+        <div class="edit-modal-content">
+
+            <button type="button" class="close-edit"
+                onclick="closeEditModal()">×</button>
+
+            <h2>Edit Your Birthday Cake ♡</h2>
+
+            <form id="edit-form">
+
+                <label for="edit-flavour">Cake flavour</label>
+                <select id="edit-flavour" required>
+                    <option value="">Select a flavour</option>
+                    <option>Chocolate</option>
+                    <option>Vanilla</option>
+                    <option>Butterscotch</option>
+                    <option>Red Velvet</option>
+                    <option>Black Forest</option>
+                </select>
+
+                <label for="edit-name">Name on cake</label>
+                <input id="edit-name" type="text"
+                    maxlength="30" required>
+
+                <label for="edit-message">Birthday message</label>
+                <input id="edit-message" type="text"
+                    maxlength="60">
+
+                <label for="edit-candles">Candles</label>
+                <select id="edit-candles">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <label for="edit-candle-quantity">Candle quantity</label>
+                <input id="edit-candle-quantity"
+                    type="number" min="1" max="50" value="1">
+
+                <label for="edit-instructions">Special instructions</label>
+                <textarea id="edit-instructions"
+                    maxlength="200"></textarea>
+
+                <button type="submit">Save Changes ♡</button>
+
+            </form>
+        </div>
     </div>
 
 <script>
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let cartItems = document.getElementById("cart-items");
+const cartItems = document.getElementById("cart-items");
 
-let total = 0;
-
-cart.forEach(function(item, index) {
-
-    cartItems.innerHTML += `
-        <div class="cart-item">
-            <h3>${item.name}</h3>
-            <p>₹${item.price}</p>
-            <button onclick="removeFromCart(${index})">
-                Remove
-            </button>
-        </div>
-    `;
-
-    total = total + item.price;
-
-});
-
-document.getElementById("cart-total").innerText = total;
+let editingIndex = null;
 
 
-function removeFromCart(index) {
+// Group signature cakes, keep personalised cakes separate
+function getGroupedCart() {
+
+    let groupedCart = [];
+
+    cart.forEach(function(item, index) {
+
+        if (item.customisation) {
+
+            groupedCart.push({
+                ...item,
+                indices: [index],
+                personalised: true
+            });
+
+        } else {
+
+            let existing = groupedCart.find(function(group) {
+                return !group.personalised && group.name === item.name;
+            });
+
+            if (existing) {
+                existing.quantity++;
+                existing.indices.push(index);
+            } else {
+                groupedCart.push({
+                    ...item,
+                    quantity: 1,
+                    indices: [index],
+                    personalised: false
+                });
+            }
+
+        }
+
+    });
+
+    return groupedCart;
+}
+
+
+// Display cart
+function displayCart() {
+
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+            <div class="empty-cart">
+                <h2>Your cart is empty ♡</h2>
+                <p>Add some delicious cakes to get started!</p>
+            </div>
+        `;
+
+    } else {
+
+        let groupedCart = getGroupedCart();
+
+        groupedCart.forEach(function(item) {
+
+            let quantity = item.personalised ? 1 : item.quantity;
+            let subtotal = Number(item.price) * quantity;
+
+            total += subtotal;
+
+            let customDetails = "";
+
+            if (item.customisation) {
+
+                const c = item.customisation;
+
+                customDetails = `
+                    <div class="custom-details">
+                        <strong>Your customisation</strong><br>
+                        Flavour: ${c.flavour}<br>
+                        Name: ${c.cakeName}<br>
+                        Message: ${c.message || "None"}<br>
+                        Candles: ${c.candles}
+                        ${c.candles === "Yes" ? "(" + c.candleQuantity + ")" : ""}<br>
+                        Instructions: ${c.instructions || "None"}
+                    </div>
+                `;
+            }
+
+            let quantityControls = item.personalised ? "" : `
+                <div class="quantity-controls">
+                    <button onclick="decreaseQuantity(${item.indices[item.indices.length - 1]})">−</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="increaseQuantity('${item.name}')">+</button>
+                </div>
+            `;
+
+            let editButton = item.personalised ? `
+                <button class="edit-btn"
+                    onclick="editCustomisation(${item.indices[0]})">
+                    ✎ Edit Customisation
+                </button>
+            ` : "";
+
+            let removeButton = item.personalised
+                ? `<button class="remove-btn"
+                    onclick="removeSingleItem(${item.indices[0]})">Remove</button>`
+                : `<button class="remove-btn"
+                    onclick="removeProduct('${item.name}')">Remove</button>`;
+
+            cartItems.innerHTML += `
+                <div class="cart-item">
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Price: ₹${item.price}</p>
+                        ${customDetails}
+                        <p><strong>Subtotal: ₹${subtotal}</strong></p>
+                        ${editButton}
+                    </div>
+
+                    ${quantityControls}
+                    ${removeButton}
+                </div>
+            `;
+
+        });
+
+    }
+
+    document.getElementById("cart-total").innerText = total;
+}
+
+
+// Increase signature cake quantity
+function increaseQuantity(name) {
+
+    let existingItem = cart.find(function(item) {
+        return item.name === name && !item.customisation;
+    });
+
+    if (existingItem) {
+        cart.push({
+            name: existingItem.name,
+            price: existingItem.price
+        });
+    }
+
+    saveCart();
+}
+
+
+// Decrease signature cake quantity
+function decreaseQuantity(index) {
 
     cart.splice(index, 1);
 
+    saveCart();
+}
+
+
+// Remove all signature cakes of the same name
+function removeProduct(name) {
+
+    cart = cart.filter(function(item) {
+        return item.name !== name || item.customisation;
+    });
+
+    saveCart();
+}
+
+
+// Remove one personalised cake
+function removeSingleItem(index) {
+
+    cart.splice(index, 1);
+
+    saveCart();
+}
+
+
+// Open edit form with existing details
+function editCustomisation(index) {
+
+    editingIndex = index;
+
+    const c = cart[index].customisation;
+
+    document.getElementById("edit-flavour").value = c.flavour;
+    document.getElementById("edit-name").value = c.cakeName;
+    document.getElementById("edit-message").value = c.message;
+    document.getElementById("edit-candles").value = c.candles;
+    document.getElementById("edit-candle-quantity").value =
+        c.candleQuantity || 1;
+    document.getElementById("edit-instructions").value = c.instructions;
+
+    document.getElementById("edit-modal").hidden = false;
+}
+
+
+// Close edit form
+function closeEditModal() {
+
+    document.getElementById("edit-modal").hidden = true;
+
+    editingIndex = null;
+}
+
+
+// Save edited customisation
+document.getElementById("edit-form").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    if (editingIndex === null) return;
+
+    const candles = document.getElementById("edit-candles").value;
+
+    cart[editingIndex].customisation = {
+        flavour: document.getElementById("edit-flavour").value,
+        cakeName: document.getElementById("edit-name").value.trim(),
+        message: document.getElementById("edit-message").value.trim(),
+        candles: candles,
+        candleQuantity: candles === "Yes"
+            ? Number(document.getElementById("edit-candle-quantity").value)
+            : 0,
+        instructions: document.getElementById("edit-instructions").value.trim()
+    };
+
+    saveCart();
+
+    closeEditModal();
+
+});
+
+
+// Save cart and refresh display
+function saveCart() {
+
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    location.reload();
+    displayCart();
 
 }
+
+
+// Initial display
+displayCart();
 
 </script>
 
 </body>
 </html>
-

@@ -70,10 +70,12 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-  webServer: {
-    command: 'npx http-server "C:/Users/pooja/Desktop/The Cakery" -p 5500',
-    url: 'http://127.0.0.1:5500/index.html',
-    reuseExistingServer: true,
-  },
+  
+webServer: {
+  command: 'npx http-server . -p 5500',
+  url: 'http://127.0.0.1:5500/index.html',
+  reuseExistingServer: !process.env.CI,
+},
+
 });
 

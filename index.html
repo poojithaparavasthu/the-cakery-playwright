@@ -1,314 +1,158 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>The Cakery</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fff9f3;
-            color: #4a3b3b;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-            background-color: #fff9f3;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #c9788c;
-        }
-
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #4a3b3b;
-            font-size: 16px;
-        }
-
-        .hero {
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px 80px;
-        }
-
-        .hero-image {
-    width: 45%;
-    height: 380px;
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-        .hero-text h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
-            color: #a85d72;
-        }
-
-        .hero-text p {
-            font-size: 20px;
-            line-height: 1.6;
-        }
-
-        .buttons {
-            margin-top: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 25px;
-            margin-right: 10px;
-            border-radius: 25px;
-            text-decoration: none;
-            background-color: #f3b8c5;
-            color: white;
-        }
-
-        .button.secondary {
-            background-color: #ddd4f2;
-            color: #4a3b3b;
-        }
-
-        .hero-image {
-    width: 45%;
-    height: 380px;
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-        
-        .cakes {
-    padding: 70px 80px;
-    text-align: center;
-    background-color: #fff4f5;
-}
-
-.cakes h2 {
-    font-size: 38px;
-    color: #a85d72;
-    margin-bottom: 10px;
-}
-
-.section-subtitle {
-    font-size: 17px;
-    margin-bottom: 40px;
-}
-
-.cake-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.cake-card {
-    width: 220px;
-    padding: 20px;
-    background-color: #fff9f3;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.cake-photo {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-.cake-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 15px;
-}
-
-.cake-card h3 {
-    color: #a85d72;
-    margin-bottom: 8px;
-}
-
-.cake-card p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.cake-card strong {
-    font-size: 18px;
-}
-
-.cake-card button {
-    margin-top: 12px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #f3b8c5;
-    color: white;
-    cursor: pointer;
-}
-    </style>
+    <title>The Cakery | Sweet Moments</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+<header class="navbar">
+    <a href="index.html" class="logo">The Cakery ♡</a>
 
-        <div class="logo">
-            The Cakery
-        </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#cakes">Our Cakes</a>
+        <a href="#about">About</a>
+        <a href="cart.html" class="cart-link">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </a>
+    </nav>
+</header>
 
-        <nav>
-    <a href="#">Home</a>
-    <a href="#">Cakes</a>
-    <a href="#">Create Your Cake</a>
-    <a href="#">My Orders</a>
-    <a href="#">Login</a>
-    <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
-</nav>
-
-    </header>
-
-
-    <section class="hero">
-
+<main>
+    <section class="hero" id="home">
         <div class="hero-text">
-
-            <h1>Your Cake,<br>Your Moment.</h1>
-
-            <p>
-                Freshly baked. Easy to order.
-                Made for every little celebration.
-            </p>
-
-            <div class="buttons">
-
-                <a href="#" class="button">
-                    Shop Cakes
-                </a>
-
-                <a href="#" class="button secondary">
-                    Create Your Cake
-                </a>
-
-            </div>
-
+            <span class="eyebrow">BAKED WITH LOVE ♡</span>
+            <h1>Life is short.<br>Eat more cake.</h1>
+            <p>Handcrafted sweetness for your happiest moments.</p>
+            <a href="#cakes" class="primary-btn">Explore Our Cakes →</a>
         </div>
-
 
         <div class="hero-image">
-   <img src="Image/hero-cake.jpg" alt="The Cakery cake">
-</div>
+            <img src="Image/hero-cake.jpg" alt="Beautiful celebration cake">
+        </div>
+    </section>
 
-</section>
+    <section class="categories" id="categories">
+        <h2>Find Your Favourite</h2>
+        <p class="subtitle">A little sweetness for every occasion.</p>
 
-<section class="cakes">
+        <div class="category-list">
+            <button class="category-btn active" data-category="All">All Cakes</button>
+            <button class="category-btn" data-category="Chocolate">Chocolate</button>
+            <button class="category-btn" data-category="Birthday">Birthday</button>
+            <button class="category-btn" data-category="Fruit">Fruit</button>
+            <button class="category-btn" data-category="Premium">Premium</button>
+            <button class="category-btn" data-category="Bento">Bento</button>
+        </div>
+    </section>
 
-    <h2>A Little Something Sweet</h2>
-
-    <p class="section-subtitle">
-        Our favourites, freshly baked for every little moment.
-    </p>
-
-    <div class="cake-container">
-
-        <div class="cake-card">
-            <div class="cake-photo">
-               <img src="chocolate_truffle.jpeg" alt="Chocolate Truffle Cake">
+    <section class="cakes" id="cakes">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">OUR LITTLE COLLECTION</span>
+                <h2>Made to Make You Smile</h2>
+                <p class="subtitle">Find your next favourite slice.</p>
             </div>
-            <h3>Chocolate Truffle</h3>
-            <p>Rich, chocolatey and oh-so-good.</p>
-            <strong>₹699</strong>
-            <br>
-            <button onclick="addToCart('Chocolate Truffle', 699)">
-    Quick Add
-</button>
         </div>
 
-        <div class="cake-card">
-            <div class="cake-photo">
-               <img src="BUTTERSCOTCH_CAKE.jpeg" alt="Butterscotch Cake">
-            </div>
-            <h3>Butterscotch Crunch</h3>
-            <p>Sweet, creamy with a little crunch.</p>
-            <strong>₹749</strong>
-            <br>
-            <button onclick="addToCart('Butterscotch Crunch', 749)">
-    Quick Add
+        <div class="shop-controls">
+            <button id="wishlist-toggle" class="category-btn">
+    ♡ My Wishlist
 </button>
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search your favourite cake..."
+                aria-label="Search cakes"
+            >
+
+            <select id="sort-select" aria-label="Sort cakes">
+                <option value="default">Sort by: Featured</option>
+                <option value="low-high">Price: Low to High</option>
+                <option value="high-low">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
         </div>
 
-        <div class="cake-card">
-             <div class="cake-photo">
-               <img src="red_velvet.jpeg" alt="Red Velvet Cake">
-            </div>
-            <h3>Red Velvet</h3>
-            <p>Soft, creamy and made for celebrations.</p>
-            <strong>₹699</strong>
-            <br>
-           <button onclick="addToCart('Red Velvet', 699)">
-    Quick Add
-</button>
-        </div>
+        <p id="result-count" aria-live="polite"></p>
+        <div class="cake-container" id="cake-container"></div>
+        <p id="no-results" hidden>No cakes found. Try another search! ♡</p>
+    </section>
 
-        <div class="cake-card">
-    <div class="cake-photo">
-        <img src="blueberry_vanilla.jpeg" alt="Blueberry Vanilla Cake">
+    <section class="about" id="about">
+        <span class="eyebrow">A LITTLE ABOUT US</span>
+        <h2>Every Cake Has a Story</h2>
+        <p>
+            From little celebrations to big milestones,
+            we believe every moment deserves something sweet.
+            Welcome to The Cakery!
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>Made with ♡ by The Cakery | Freshly baked, always.</p>
+</footer>
+
+<!-- Birthday Cake Customisation Popup -->
+<div id="birthday-modal" class="birthday-modal" hidden>
+    <div class="birthday-modal-content">
+        <button type="button" id="close-birthday-modal" class="close-modal">×</button>
+
+        <span class="eyebrow">MADE ESPECIALLY FOR YOU ♡</span>
+        <h2>Personalise Your Birthday Cake</h2>
+        <p id="birthday-cake-name"></p>
+
+        <form id="birthday-form">
+
+            <label for="cake-flavour">Choose your flavour</label>
+            <select id="cake-flavour" required>
+                <option value="">Select a flavour</option>
+                <option>Chocolate</option>
+                <option>Vanilla</option>
+                <option>Butterscotch</option>
+                <option>Red Velvet</option>
+                <option>Black Forest</option>
+            </select>
+
+            <label for="cake-name">Name on the cake</label>
+            <input type="text" id="cake-name"
+                   placeholder="e.g. Ananya" maxlength="30" required>
+
+            <label for="cake-message">Birthday message</label>
+            <input type="text" id="cake-message"
+                   placeholder="e.g. Happy Birthday!" maxlength="60">
+
+            <label for="candle-choice">Would you like candles?</label>
+            <select id="candle-choice">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <label for="candle-quantity">Number of candles</label>
+            <input type="number" id="candle-quantity"
+                   min="1" max="50" value="1">
+
+            <label for="cake-instructions">Special decoration instructions</label>
+            <textarea id="cake-instructions"
+                      placeholder="Any special requests? (Optional)"
+                      maxlength="200"></textarea>
+
+            <button type="submit" class="primary-btn">
+                Add Personalised Cake ♡
+            </button>
+
+        </form>
     </div>
-    <h3>Blueberry Vanilla</h3>
-    <p>Light, fruity and deliciously fresh.</p>
-    <strong>₹749</strong>
-    <br>
-    <button onclick="addToCart('Blueberry Vanilla', 749)">
-        Quick Add
-    </button>
 </div>
 
-<script>
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-document.getElementById("cart-count").innerText = cart.length;
-
-function addToCart(name, price) {
-
-    cart.push({
-        name: name,
-        price: price
-    });
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    document.getElementById("cart-count").innerText = cart.length;
-
-    alert(name + " has been added to your cart!");
-
-}
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
