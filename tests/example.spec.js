@@ -17,7 +17,7 @@ test('Cakery homepage loads successfully', async ({ page }) => {
 test('Chocolate Truffle can be added to cart', async ({ page }) => {
   await page.goto('http://127.0.0.1:5500/index.html');
 
-  await page.locator('button[onclick*="Chocolate Truffle"]').click();
+  await page.locator('button.add-btn[onclick*="Chocolate Truffle"]').click();
 
   await page.getByRole('link', { name: /cart/i }).click();
 
@@ -27,7 +27,7 @@ test('Chocolate Truffle can be added to cart', async ({ page }) => {
 test('Cart count increases after adding a product', async ({ page }) => {
   await page.goto('http://127.0.0.1:5500/index.html');
 
-  await page.locator('button[onclick*="Chocolate Truffle"]').click();
+  await page.locator('button.add-btn[onclick*="Chocolate Truffle"]').click();
 
   await expect(page.locator('#cart-count')).toHaveText('1');
 });
@@ -35,7 +35,7 @@ test('Cart count increases after adding a product', async ({ page }) => {
 test('Red Velvet adds the correct product to cart', async ({ page }) => {
   await page.goto('http://127.0.0.1:5500/index.html');
 
-  await page.locator('button[onclick*="Red Velvet"]').click();
+  await page.locator('button.add-btn[onclick*="Red Velvet"]').click();
 
   await page.getByRole('link', { name: /cart/i }).click();
 
@@ -46,7 +46,7 @@ test('Red Velvet adds the correct product to cart', async ({ page }) => {
 test('Cart keeps the product after page refresh', async ({ page }) => {
   await page.goto('http://127.0.0.1:5500/index.html');
 
-  await page.locator('button[onclick*="Chocolate Truffle"]').click();
+  await page.locator('button.add-btn[onclick*="Chocolate Truffle"]').click();
 
   await page.reload();
 
@@ -56,7 +56,7 @@ test('Cart keeps the product after page refresh', async ({ page }) => {
 test('Chocolate Truffle displays the correct price', async ({ page }) => {
   await page.goto('http://127.0.0.1:5500/index.html');
 
-  await page.locator('button[onclick*="Chocolate Truffle"]').click();
+  await page.locator('button.add-btn[onclick*="Chocolate Truffle"]').click();
 
   await page.getByRole('link', { name: /cart/i }).click();
 
