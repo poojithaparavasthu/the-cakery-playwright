@@ -1,72 +1,113 @@
+The Cakery – Playwright Automation Testing Project
 
-# The Cakery | Manual Testing & UI Automation
+A web-based bakery shopping application built as a practical QA portfolio project to demonstrate manual testing and UI automation using Playwright.
 
-A pastel-themed cake shopping website used as a personal QA portfolio project to practise functional testing, test case design, defect identification, and browser automation.
+Live Website: https://poojithaparavasthu.github.io/the-cakery-playwright/
 
-## Project Overview
+GitHub Repository: https://github.com/poojithaparavasthu/the-cakery-playwright
 
-The Cakery is a sample e-commerce website featuring cake listings, product prices, and shopping cart functionality. It is used to practise real-world website testing scenarios.
+Project Overview
 
-## Features Tested
+The Cakery is a sample online cake-shopping website that allows users to browse products, customise birthday cakes, manage their cart and complete a demo checkout.
 
-- Cake product listings and displayed prices
-- Quick Add and add-to-cart functionality
-- Shopping cart behaviour and item accuracy
-- Cart persistence using browser local storage
-- Quantity and total-price validation
-- Browser refresh behaviour
+The project focuses on validating real-world e-commerce user workflows, identifying UI and functional issues, and automating key scenarios using Playwright.
 
-## Tech Stack
+Key Application Features
 
-- HTML, CSS, JavaScript
-- Playwright for UI automation
-- JavaScript-based test scripts
-- Git and GitHub
+Product listing and category browsing
 
-## Manual Testing
+Product search and sorting
 
-Manual testing practice includes:
+Wishlist functionality
 
-- Functional testing of product and cart workflows
-- Positive and negative test scenarios
-- Edge-case testing
-- Expected versus actual result validation
-- Defect identification and retesting
+Add-to-cart functionality
 
-## Automation Testing
+Cart quantity management and item removal
 
-Playwright automation practice includes:
+Personalised birthday cake customisation
 
-- Homepage loading and page-title validation
-- Add-to-cart verification
-- Cart count validation
-- Product and price assertions
-- Cart persistence after page refresh
-- Cross-browser execution using Chromium, Firefox, and WebKit
+Checkout form and input validation
 
-Automated tests are being refined as part of ongoing project development. Individual test results may vary while issues are investigated.
+Coupon application (SWEET10)
 
-## Skills Practised
+Demo order confirmation
 
-- Test case design and execution
-- Functional and regression testing concepts
-- Assertions and locator strategies
-- Browser dialog handling
-- Basic UI automation
-- Test result analysis and debugging
+Testing Tools & Technologies
 
-## Project Status
+Playwright – UI automation testing
 
-Personal learning and portfolio project. Features and automated tests are developed, executed, and improved incrementally.
+JavaScript – Automation test scripts
 
-## Repository
+Visual Studio Code – Development and test execution
 
-[View The Cakery on GitHub](https://github.com/poojithaparavasthu/the-cakery-playwright)
+Git & GitHub – Version control and project repository
 
-## Project Screenshots
+GitHub Actions – Continuous Integration (CI)
 
-### Homepage
-![The Cakery Homepage](cakery-homepage.png)
+HTML, CSS & JavaScript – Website technologies
 
-### Playwright Test Results
-![Playwright Test Results](cakery-test-results.png)
+Automated Test Coverage
+
+The Playwright test suite covers key application workflows, including:
+
+Homepage loading and page title validation
+
+Adding products to the shopping cart
+
+Cart count validation
+
+Verifying the correct product is added
+
+Cart persistence after page refresh
+
+Product price validation
+
+Cross-Browser Testing
+
+Automated tests are executed across three browser engines:
+
+Chromium
+
+Firefox
+
+WebKit
+
+The latest successful GitHub Actions execution completed 18 test executions across all three browsers.
+
+Running the Tests Locally
+
+1. Clone the repository
+
+git clone https://github.com/poojithaparavasthu/the-cakery-playwright.git
+
+2. Navigate to the project folder
+
+cd the-cakery-playwright
+
+3. Install dependencies
+
+npm install
+
+4. Install Playwright browsers
+
+npx playwright install
+
+5. Execute the automated tests
+
+npx playwright test
+
+6. View the HTML test report
+
+npx playwright show-report
+
+Continuous Integration
+
+GitHub Actions is configured to execute the Playwright automation suite automatically when changes are pushed to the repository.
+
+The workflow validates the application through automated browser testing and provides execution results.
+
+Project Objective
+
+This project demonstrates practical experience in validating web application functionality, writing and executing automated UI test cases, performing cross-browser testing and integrating automation tests with a CI workflow.
+
+Note: This is a demonstration e-commerce application. Orders and checkout are simulated; no real payment processing or backend order placement is involved.
